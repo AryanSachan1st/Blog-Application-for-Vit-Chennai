@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+client/node_modules/
+
+# Environment variables
+.env
+client/.env
+server/.env
+
+# Logs
+logs/
+*.log
+
+# Build directories
+dist/
+build/
+out/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.DS_Store
+
+# System files
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+
+# Database files
+*.db
+*.sqlite
+
+# Check files (specific to this project)
+check-blog-posts.js
+check-users.js
