@@ -7,6 +7,14 @@ client/node_modules/
 client/.env
 server/.env
 
+# Package files
+package.json
+package-lock.json
+client/package.json
+client/package-lock.json
+server/package.json
+server/package-lock.json
+
 # Logs
 logs/
 *.log
