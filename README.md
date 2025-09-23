@@ -37,9 +37,14 @@ This is a full-stack blog application built for VIT Chennai.
    ```
 3. Set up environment variables in `server/.env`:
    ```
+   MONGO_URI=your_mongodb_connection_string
    PORT=5000
-   MONGODB_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret
+   EMAIL_HOST=smtp.gmail.com
+   EMAIL_PORT=587
+   EMAIL_SECURE=false
+   EMAIL_USER=your_email@gmail.com
+   EMAIL_PASS=your_app_password
    ```
 4. Start the development servers:
    ```
