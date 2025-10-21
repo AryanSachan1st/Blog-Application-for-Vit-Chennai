@@ -283,6 +283,111 @@ nav ul li a:hover {
   box-shadow: none;
 }
 
+.edit-blog {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: var(--background-light);
+  border-radius: 16px;
+  box-shadow: 0 5px 15px var(--shadow-light);
+  animation: fadeIn 0.5s ease-in;
+  border: 1px solid var(--border-color);
+}
+
+.edit-blog h2 {
+  margin-top: 0;
+  color: var(--text-primary);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.edit-blog form div {
+  margin-bottom: 25px;
+}
+
+.edit-blog label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.edit-blog input,
+.edit-blog textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background-color: var(--background-light);
+  color: var(--text-primary);
+}
+
+.edit-blog input:focus,
+.edit-blog textarea:focus {
+  outline: none;
+  border-color: var(--primary-gradient-start);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+.edit-blog textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+.edit-blog button {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+  color: white;
+  padding: 16px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-blog button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.edit-blog button:disabled {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.cancel-button {
+  width: 100%;
+  background: linear-gradient(135deg, var(--background-gray) 0%, #e1e5e9 100%);
+  color: var(--text-primary);
+  padding: 16px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
 
 .message {
   margin: 20px auto;
@@ -480,11 +585,27 @@ nav ul li a:hover {
 
 .blog-detail-actions {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
-  margin-top: 30px;
-  padding-top: 30px;
+  margin-top: 40px;
+  padding-top: 40px;
   border-top: 1px solid var(--border-color);
+}
+
+.blog-detail-actions .edit-button,
+.blog-detail-actions .delete-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px var(--shadow-light);
+}
+
+.blog-detail-actions .edit-button:hover,
+.blog-detail-actions .delete-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px var(--shadow-medium);
 }
 
 .blog-content {

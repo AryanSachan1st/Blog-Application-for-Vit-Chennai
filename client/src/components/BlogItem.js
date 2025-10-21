@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import blogService from '../services/blogService';
 
-const BlogItem = ({ blogPost }) => {
+const BlogItem = ({ blogPost, isHomePage }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   
   // Check if the logged-in user is the author of the blog post
-  const isAuthor = user && blogPost.author && user._id === blogPost.author._id;
+  const isAuthor = user && blogPost.author && user.id === blogPost.author._id;
 
   const handleEdit = () => {
     // Navigate to edit page
@@ -43,7 +43,7 @@ const BlogItem = ({ blogPost }) => {
           </div>
         </div>
       </Link>
-      {isAuthor && (
+      {isAuthor && !isHomePage && (
         <div className="blog-item-actions">
           <button className="edit-button" onClick={handleEdit}>Edit</button>
           <button className="delete-button" onClick={handleDelete}>Delete</button>

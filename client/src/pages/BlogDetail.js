@@ -37,7 +37,7 @@ const BlogDetail = () => {
   if (!blogPost) return <div className="blog-detail">Blog post not found.</div>;
 
   // Check if the logged-in user is the author of the blog post
-  const isAuthor = user && blogPost.author && user._id === blogPost.author._id;
+  const isAuthor = user && blogPost.author && user.id === blogPost.author._id;
 
   const handleEdit = () => {
     // Navigate to edit page
@@ -63,7 +63,7 @@ const BlogDetail = () => {
       <h2>{blogPost.title}</h2>
       <div className="blog-meta">
         <p className="blog-source">
-          Source: <a href={blogPost.source} target="_blank" rel="noopener noreferrer">{blogPost.title}</a>
+          Source: <a href={blogPost.source} target="_blank" rel="noopener noreferrer">{blogPost.source}</a>
         </p>
       </div>
       <div className="blog-content">{blogPost.body}</div>
