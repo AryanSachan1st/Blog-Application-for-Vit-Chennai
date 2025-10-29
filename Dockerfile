@@ -26,7 +26,7 @@ WORKDIR /app/client
 
 # Build React app with optional build-time env
 ARG REACT_APP_API_URL
-ENV REACT_APP_API_URL=$REACT_APP_API_URL
+ENV REACT_APP_API_URL=${REACT_APP_API_URL}
 
 RUN npm run build
 
@@ -49,4 +49,3 @@ EXPOSE 8080
 
 # Start server
 CMD ["npm", "start"]
-

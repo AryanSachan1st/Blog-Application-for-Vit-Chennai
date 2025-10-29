@@ -1,0 +1,56 @@
+BlogWebsite-New/
+├── .gitignore
+├── LICENSE
+├── README.md
+├── verify-user.js
+├── check-users.js
+├── check-blog-posts.js
+├── client/
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public/
+│   │   └── index.html
+│   └── src/
+│       ├── App.css
+│       ├── App.js
+│       ├── index.js
+│       ├── components/
+│       │   ├── BlogItem.js
+│       │   ├── BlogList.js
+│       │   ├── Header.js
+│       │   ├── Pagination.js
+│       │   └── SearchBar.js
+│       ├── contexts/
+│       │   └── AuthContext.js
+│       ├── pages/
+│       │   ├── About.js
+│       │   ├── BlogDetail.js
+│       │   ├── CreateBlog.js
+│       │   ├── EditBlog.js
+│       │   ├── Home.js
+│       │   ├── Login.js
+│       │   └── Signup.js
+│       └── services/
+│           ├── blogService.js
+│           └── userService.js
+└── server/
+    ├── package-lock.json
+    ├── package.json
+    ├── server.js
+    ├── updateBlogPosts.js
+    ├── .env
+    ├── config/
+    │   └── db.js
+    ├── controllers/
+    │   ├── blogController.js
+    │   └── userController.js
+    ├── middleware/
+    │   └── authMiddleware.js
+    ├── models/
+    │   ├── Blog.js
+    │   └── User.js
+    ├── routes/
+    │   ├── blogRoutes.js
+    │   └── userRoutes.js
+    └── utils/
+        └── emailService.js
