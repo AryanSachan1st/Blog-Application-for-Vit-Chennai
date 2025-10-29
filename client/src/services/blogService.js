@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/blogs';
+const API_BASE_URL = process.env.REACT_APP_API_URL || '/api/blogs';
 
 // Create a new blog post
 const createBlogPost = async (blogData) => {

@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/users';
+const API_BASE_URL = process.env.REACT_APP_API_URL || '/api/users';
 
 // Register a new user with OTP support
 const registerUser = async (userData) => {
