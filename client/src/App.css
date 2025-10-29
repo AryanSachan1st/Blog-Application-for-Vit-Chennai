@@ -69,6 +69,29 @@ body {
   align-items: center;
 }
 
+/* Mobile menu button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
 .header-content h1 {
   margin: 0;
   font-size: 32px;
@@ -108,6 +131,38 @@ nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.mobile-nav li {
+  margin: 0;
+}
+
+.mobile-nav a,
+.mobile-nav button {
+  font-size: 24px;
+  padding: 15px 30px;
 }
 
 /* Form Styles */
@@ -1027,4 +1082,184 @@ nav ul li a:hover {
   border-color: #007bff;
   transform: none;
   box-shadow: none;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  /* Header and Navigation */
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  /* Forms */
+  .form-container,
+  .create-blog,
+  .edit-blog {
+    padding: 25px;
+    margin: 20px auto;
+  }
+
+  .form-container h2,
+  .create-blog h2,
+  .edit-blog h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .form-container label,
+  .create-blog label,
+  .edit-blog label {
+    font-size: 15px;
+  }
+
+  .form-container input,
+  .form-container textarea,
+  .form-container select,
+  .create-blog input,
+  .create-blog textarea,
+  .edit-blog input,
+  .edit-blog textarea {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+
+  .form-container button,
+  .create-blog button,
+  .edit-blog button,
+  .cancel-button {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  /* Blog List */
+  .blog-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 10px 0;
+  }
+
+  .blog-item {
+    padding: 20px;
+  }
+
+  .blog-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  /* Blog Detail */
+  .blog-detail {
+    padding: 25px;
+    margin: 20px auto;
+  }
+
+  .blog-detail h2 {
+    font-size: 28px;
+  }
+
+  .blog-content {
+    font-size: 16px;
+  }
+
+  .blog-content h3 {
+    font-size: 22px;
+  }
+
+  /* Search Bar */
+  .search-bar {
+    padding: 20px;
+  }
+
+  .search-bar form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+  }
+
+  /* Auth Pages */
+  .auth-container {
+    padding: 30px 25px;
+    margin: 15px;
+  }
+
+  .auth-title {
+    font-size: 30px;
+  }
+
+  .form-input {
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+
+  .auth-button {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  /* About Page */
+  .about {
+    padding: 25px;
+    margin: 20px auto;
+  }
+
+  .about h2 {
+    font-size: 30px;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+
+  /* Home Page */
+  .home {
+    padding: 20px 15px;
+  }
+
+  .home h2 {
+    font-size: 30px;
+  }
+
+  /* Messages */
+  .message {
+    padding: 15px 20px;
+    margin: 15px auto;
+    font-size: 15px;
+  }
+
+  /* Pagination */
+  .pagination {
+    gap: 5px;
+    margin-top: 30px;
+    padding: 15px 10px;
+  }
+
+  .pagination-button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
 }
