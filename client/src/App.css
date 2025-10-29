@@ -136,33 +136,6 @@ nav ul li a:hover {
 /* Mobile navigation */
 .mobile-nav {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 5;
-}
-
-.mobile-nav ul {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  align-items: center;
-}
-
-.mobile-nav li {
-  margin: 0;
-}
-
-.mobile-nav a,
-.mobile-nav button {
-  font-size: 24px;
-  padding: 15px 30px;
 }
 
 /* Form Styles */
@@ -1102,14 +1075,37 @@ nav ul li a:hover {
 
   nav {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
   }
 
   nav.active {
     display: flex;
   }
 
-  .mobile-nav {
+  nav ul {
     display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 0;
+  }
+
+  nav a,
+  nav button {
+    font-size: 24px;
+    padding: 15px 30px;
   }
 
   /* Forms */
