@@ -13,6 +13,18 @@ const registerUser = async (req, res) => {
   try {
     const { username, email, password, otp } = req.body;
 
+    // Validate VIT email domain
+    const emailLower = (email || '').toLowerCase();
+    const isVitEmail =
+      emailLower.endsWith('@vitstudent.ac.in') ||
+      emailLower.endsWith('@vit.ac.in');
+    if (!email || !isVitEmail) {
+      return res.status(400).json({
+        success: false,
+        error: 'Registration is restricted to VIT Chennai members only. Please use your official @vitstudent.ac.in or @vit.ac.in email address.'
+      });
+    }
+
     // If OTP is not provided, generate and send OTP
     if (!otp) {
       // Check if user already exists

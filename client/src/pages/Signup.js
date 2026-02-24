@@ -18,8 +18,21 @@ const Signup = () => {
 
   const handleSendOTP = async (e) => {
     e.preventDefault();
-    setLoading(true);
     setMessage('');
+
+    // Validate VIT email domain before making any API call
+    const emailLower = email.toLowerCase();
+    const isVitEmail =
+      emailLower.endsWith('@vitstudent.ac.in') ||
+      emailLower.endsWith('@vit.ac.in');
+    if (!isVitEmail) {
+      setMessage(
+        'Access restricted: Only VIT Chennai members can register. Please use your official @vitstudent.ac.in or @vit.ac.in email address.'
+      );
+      return;
+    }
+
+    setLoading(true);
     
     try {
       const response = await userService.registerUser({ username, email, password });
@@ -113,7 +126,7 @@ const Signup = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                placeholder="Enter your email"
+                placeholder="yourname@vitstudent.ac.in or @vit.ac.in"
               />
             </div>
             <div className="form-group">
@@ -173,7 +186,16 @@ const Signup = () => {
         </div>
         
         {message && (
-          <div className={`message ${message.includes('successful') ? 'success' : 'error'}`}>
+          <div className={`message ${
+            message.includes('successful')
+              ? 'success'
+              : message.includes('OTP sent') || message.includes('OTP resent')
+              ? 'success'
+              : 'error'
+          }`}>
+            {message.includes('Access restricted') && (
+              <span style={{ fontSize: '20px', marginRight: '6px' }}>🚫</span>
+            )}
             {message}
           </div>
         )}
