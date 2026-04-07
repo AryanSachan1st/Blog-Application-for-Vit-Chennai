@@ -12,6 +12,7 @@ const blogSchema = new mongoose.Schema({
   },
   source: {
     type: String,
+    required: true,
     default: 'self created blog-post'
   },
   author: {

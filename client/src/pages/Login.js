@@ -51,7 +51,7 @@ const Login = () => {
               value={identifier}
               onChange={(e) => setIdentifier(e.target.value)}
               required
-              placeholder="Enter your email or username"
+              placeholder="Enter your vit college email or username"
             />
           </div>
           <div className="form-group">

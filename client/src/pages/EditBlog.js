@@ -137,7 +137,8 @@ const EditBlog = () => {
             className="form-input"
             value={source}
             onChange={(e) => setSource(e.target.value)}
-            placeholder="Enter source (optional)"
+            required
+            placeholder="Enter source (required)"
           />
         </div>
         <button type="submit" className="auth-button">Update Blog Post</button>

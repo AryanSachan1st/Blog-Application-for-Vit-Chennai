@@ -23,18 +23,24 @@ const CreateBlog = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Check if user is authenticated
     const token = localStorage.getItem('token');
     if (!token) {
-      setMessage('You must be logged in to create a blog post.');
+      setMessage({ text: 'You must be logged in to create a blog post.', type: 'error' });
       return;
     }
-    
+
+    // Validate that source is provided
+    if (!source.trim()) {
+      setMessage({ text: 'Source is required. Please provide the source of this blog post.', type: 'error' });
+      return;
+    }
+
     try {
       const response = await blogService.createBlogPost({ title, body, source });
       if (response.success) {
-        setMessage('Blog post created successfully!');
+        setMessage({ text: 'Blog post created successfully!', type: 'success' });
         setTitle('');
         setBody('');
         setSource('');
@@ -43,14 +49,14 @@ const CreateBlog = () => {
           navigate('/');
         }, 2000);
       } else {
-        setMessage('Error creating blog post: ' + response.error);
+        setMessage({ text: 'Error creating blog post: ' + response.error, type: 'error' });
       }
     } catch (error) {
       // Better error handling for network errors
       if (error.message) {
-        setMessage('Error creating blog post: ' + error.message);
+        setMessage({ text: 'Error creating blog post: ' + error.message, type: 'error' });
       } else {
-        setMessage('Error creating blog post: Failed to fetch. Please check if the server is running.');
+        setMessage({ text: 'Error creating blog post: Failed to fetch. Please check if the server is running.', type: 'error' });
       }
     }
   };
@@ -95,12 +101,13 @@ const CreateBlog = () => {
             className="form-input"
             value={source}
             onChange={(e) => setSource(e.target.value)}
-            placeholder="Enter source (optional)"
+            required
+            placeholder="Enter source (required)"
           />
         </div>
         <button type="submit" className="auth-button">Submit Blog Post</button>
       </form>
-      {message && <p className="message">{message}</p>}
+      {message && <p className={`message ${message.type}`}>{message.text}</p>}
     </div>
   );
 };
